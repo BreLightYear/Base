@@ -9,6 +9,13 @@ django-extensions = "*"
 [packages]
 django = "*"
 unipath = "*"
+dj-database-url = "*"
+dj-static = "*"
+mock = "*"
+south = "*"
+gunicorn = "*"
+django-decouple = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
