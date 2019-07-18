@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import patterns, include, url
+from cadastro.views import *
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+from django.contrib import admin
+admin.autodiscover()
+
+urlpatterns = patterns('cadastro.views',
+url(r'^$', 'home', name='home'),
+url(r'^cadastro/$', Criar.as_view(), name='cadastro'),
+url(r'^lista/$', Lista.as_view(), name='lista'),
+url(r'^admin/', include(admin.site.urls)),
+)
